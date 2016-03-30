@@ -49,4 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public Integer sumar(Integer num1, Integer num2) {
+        Integer resultado = num1+num2;
+        return resultado;
+    }
+
 }
