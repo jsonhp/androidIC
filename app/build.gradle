@@ -34,15 +34,15 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
         html.enabled = true
     }
     classDirectories = fileTree(
-            dir: 'build/intermediates/classes/debug/com/apps/jsonhp/helloworld',
+            dir: 'app/build/intermediates/classes/debug/com/apps/jsonhp/helloworld',
             excludes: ['**/R.class',
                        '**/R$*.class',
                        '**/BuildConfig.*',
                        '**/Manifest*.*'])
-    sourceDirectories = files('src/main/java')
+    sourceDirectories = files('app/src/main/java')
     executionData = files('build/jacoco/testDebugUnitTest.exec')
     doFirst {
-        files('build/intermediates/classes/debug').getFiles().each { file ->
+        files('app/build/intermediates/classes/debug').getFiles().each { file ->
             if (file.name.contains('$$')) {
                 file.renameTo(file.path.replace('$$', '$'))
             }
